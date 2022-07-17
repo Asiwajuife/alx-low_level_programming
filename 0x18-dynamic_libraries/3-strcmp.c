@@ -1,24 +1,21 @@
 #include "main.h"
+
 /**
- *_strcmp - compares two strings
- *@s1: A pointer to a character that will be changed
- *@s2: A pointer to a character that will also be changed/modified/updated
- *Return: dest
+ * _strcmp - compare two strings
+ * @s1: one string
+ * @s2: one string
+ * Return: int that tells num spaces in between
  */
 
 int _strcmp(char *s1, char *s2)
-
 {
+	int i = 0;
 
-char *str_one = s1;
-char *str_two = s2;
+	while (*(s1 + i) == *(s2 + i) && *(s1 + i))
+		i++;
 
-
-while (*str_one != '\0' && *str_two != '\0' && *str_one == *str_two)
-{
-str_one++;
-str_two++;
-}
-
-return (*str_one - *str_two);
+	if (*(s2 + i))
+		return (*(s1 + i) - *(s2 + i));
+	else
+		return (0);
 }
